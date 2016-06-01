@@ -1,5 +1,5 @@
 /**
- * 
+ * @author Wai Tai Chong
  * This file is part of the AircraftSimulator Project, written as 
  * part of the assessment for CAB302, semester 1, 2016. 
  * 
@@ -32,6 +32,7 @@ public class B747 extends Aircraft {
 	 */
 	public B747(String flightCode,int departureTime) throws AircraftException {
 		//Call here 
+		super(flightCode, departureTime, FIRST, BUSINESS, PREMIUM, ECONOMY);
 		this.type = "B747";
 	}
 
@@ -42,6 +43,7 @@ public class B747 extends Aircraft {
 	 */
 	public B747(String flightCode,int departureTime,int first, int business, int premium, int economy) throws AircraftException {
 		//Call here 
+		super(flightCode, departureTime, first, business, premium, economy);
 		this.type = "B747";
 	}
 
