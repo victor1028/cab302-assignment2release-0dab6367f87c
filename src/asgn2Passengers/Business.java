@@ -1,5 +1,5 @@
 /**
- * 
+ * @author Wai Tai Chong n9291695
  */
 package asgn2Passengers;
 
@@ -21,6 +21,7 @@ public class Business extends Passenger {
 	 */
 	public Business(int bookingTime, int departureTime) throws PassengerException {
 		//Stuff here
+		super(bookingTime, departureTime);
 		this.passID = "J:" + this.passID;
 	}
 	
@@ -38,6 +39,10 @@ public class Business extends Passenger {
 
 	@Override
 	public Passenger upgrade() {
+		Passenger p = new First();
+		p.copyPassengerState(this);
+		p.passID = "F(U)" + p.passID;
+		return p;
 	
 	}
 }
