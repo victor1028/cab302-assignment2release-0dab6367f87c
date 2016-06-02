@@ -315,22 +315,24 @@ public class GUISimulator extends JFrame implements Runnable {
 		String txt7 = textField_7.getText().trim();
 		String txt8 = textField_8.getText().trim();
 		//regular expression used to check whether users input the valid values or not
-		String regex = "^[0-9]+(.[0-9]+)?$";
+		String regex = "^[0]+(.[0-9]+)?$";
+		String regex1 = "^[0-9]*[1-9][0-9]*$";
+		String regex2 = "^[0-9]+(.[0-9]+)?$";
 		
 		//check whether users input a valid value or not
-		if(!txt1.matches(regex)){
+		if(!txt1.matches(regex1)){
 			JOptionPane.showMessageDialog(panel, "Invaild seed value, please check the number you input");
 			textField_1.setText("");
 			textField_1.requestFocus();
 			return;
 		}
-		if(!txt2.matches(regex)){
+		if(!txt2.matches(regex2)){
 			JOptionPane.showMessageDialog(panel, "Invaild mean value, please check the number you input");
 			textField_2.setText("");
 			textField_2.requestFocus();
 			return;
 		}
-		if(!txt3.matches(regex)){
+		if(!txt3.matches(regex1)){
 			JOptionPane.showMessageDialog(panel,"Invaild Queue size, please check the number you input");
 			textField_3.setText("");
 			textField_3.requestFocus();
@@ -369,8 +371,8 @@ public class GUISimulator extends JFrame implements Runnable {
 		
 		//convert the values input by users to integers and decimal numbers
 		int seed = Integer.parseInt(txt1);
-		int mean = Integer.parseInt(txt2);
 		int queue_size = Integer.parseInt(txt3);
+		double mean = Double.parseDouble(txt2);
 		double cancellation = Double.parseDouble(txt4);
 		double first = Double.parseDouble(txt5);
 		double business = Double.parseDouble(txt6);
@@ -458,7 +460,7 @@ public class GUISimulator extends JFrame implements Runnable {
 		
 		//convert the values to integers and decimal numbers
 		int seed = Integer.parseInt(txt1);
-		int mean = Integer.parseInt(txt2);
+		double mean = Double.parseDouble(txt2);
 		int queue_size = Integer.parseInt(txt3);
 		double cancellation = Double.parseDouble(txt4);
 		double first = Double.parseDouble(txt5);
@@ -501,7 +503,7 @@ public class GUISimulator extends JFrame implements Runnable {
 				} else {
 					sim.processQueue(time);
 				}
-				//get the day.嚗how all numbers which are the multiples of 7嚗�
+				//get the day.（show all numbers which are the multiples of 7）
 				if(time % 7 == 0){
 					date = String.valueOf(time);
 				}
@@ -563,7 +565,7 @@ public class GUISimulator extends JFrame implements Runnable {
 		
 		//convert the contents input by user to integer and decimal number
 		int seed = Integer.parseInt(txt1);
-		int mean = Integer.parseInt(txt2);
+		double mean = Double.parseDouble(txt2);
 		int queue_size = Integer.parseInt(txt3);
 		double cancellation = Double.parseDouble(txt4);
 		double first = Double.parseDouble(txt5);
@@ -597,7 +599,7 @@ public class GUISimulator extends JFrame implements Runnable {
 					sim.processQueue(time);
 				}
 				
-				//get the day.嚗how all numbers which are the multiples of 7嚗�
+				//get the day.（show all numbers which are the multiples of 7）
 				if(time % 7 == 0){
 					date = String.valueOf(time);
 				}
