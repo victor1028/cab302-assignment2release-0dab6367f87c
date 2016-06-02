@@ -1,3 +1,5 @@
+/*@author: Jianing Chang (n9293400)*/
+
 package asgn2Tests;
 
 import static org.junit.Assert.*;
