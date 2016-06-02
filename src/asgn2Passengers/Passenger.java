@@ -4,6 +4,9 @@
  * part of the assessment for CAB302, semester 1, 2016. 
  * 
  */
+ 
+ /*@author: Jianing Chang (n9293400)*/
+ 
 package asgn2Passengers;
 
 
