@@ -7,6 +7,8 @@ package asgn2Passengers;
  * @author hogan
  *
  */
+ 
+ /*@author: Jianing Chang (n9293400)*/
 public class First extends Passenger {
 
 	/**
